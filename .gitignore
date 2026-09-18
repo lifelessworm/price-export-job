@@ -1,0 +1,40 @@
+.venv/
+__pycache__/
+dist/
+build/
+*.exe
+# Ignorar drivers pesados do Oracle
+instantclient_23_26/
+
+# Ignorar ambiente virtual e caches
+.venv/
+__pycache__/
+
+# Ignorar pastas de construção do executável
+dist/
+build/
+*.exe
+.ENV
+.env
+# IDE e editor configurations
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Python specific
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+htmlcov/
+.coverage
+
+# Application sensitive files
+Saida/
+Ars/
+MEta-INF/
