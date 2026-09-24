@@ -2,7 +2,7 @@
 
 
 a = Analysis(
-    ['mestre.py'],
+    ['pricing_pipeline.py'],
     pathex=[],
     binaries=[],
     datas=[],
@@ -22,6 +22,11 @@ exe = EXE(
     a.binaries,
     a.datas,
     [],
+    # NOTE: kept as 'mestre' intentionally so the built executable's filename
+    # (dist/mestre.exe) doesn't change. If a Windows Task Scheduler job or
+    # .bat file elsewhere points at mestre.exe, changing this name would
+    # silently break that job. Rename here (and update the scheduled task)
+    # if/when you're ready to retire the old executable name.
     name='mestre',
     debug=False,
     bootloader_ignore_signals=False,

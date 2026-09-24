@@ -3,20 +3,20 @@ __pycache__/
 dist/
 build/
 *.exe
-# Ignorar drivers pesados do Oracle
+# Ignore heavy Oracle drivers
 instantclient_23_26/
 
-# Ignorar ambiente virtual e caches
+# Ignore virtual environment and caches
 .venv/
 __pycache__/
 
-# Ignorar pastas de construção do executável
+# Ignore executable build folders
 dist/
 build/
 *.exe
 .ENV
 .env
-# IDE e editor configurations
+# IDE and editor configurations
 .vscode/
 .idea/
 *.swp
@@ -35,6 +35,6 @@ htmlcov/
 .coverage
 
 # Application sensitive files
-Saida/
+Output/
 Ars/
 MEta-INF/

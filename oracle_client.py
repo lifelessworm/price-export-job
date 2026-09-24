@@ -3,13 +3,11 @@ import os
 import sys
 from dotenv import load_dotenv
 
-from caminhos import caminho
+from paths import path
 
-# Carrega variáveis do arquivo .env
 load_dotenv()
 
-# Obtém configurações de ambiente
-lib_dir = caminho('ORACLE_LIB_DIR', 'instantclient_23_0')
+lib_dir = path('ORACLE_LIB_DIR', 'instantclient_23_0')
 oracle_user = os.getenv('ORACLE_USER')
 oracle_password = os.getenv('ORACLE_PASSWORD')
 oracle_host = os.getenv('ORACLE_HOST')
@@ -18,9 +16,9 @@ oracle_service = os.getenv('ORACLE_SERVICE')
 
 try:    
     oracledb.init_oracle_client(lib_dir=lib_dir)
-    print("Oracle Client inicializado com sucesso!")
+    print("Oracle Client initialized successfully!")
 except Exception as e:
-    print(f"Erro ao inicializar o Oracle Client: {e}")
+    print(f"Error initializing Oracle Client: {e}")
     exit(1)
 
 try:
@@ -30,11 +28,9 @@ try:
         password=oracle_password,
         dsn=dsn
     )
-    print("Conectado ao Oracle com sucesso!")
+    print("Connected to Oracle successfully!")
 
 except Exception as e:
-    print(f"ERRO FATAL ao conectar ao Oracle ({oracle_host}:{oracle_port}/{oracle_service}): {e}")
-    print("Verifique se esta máquina tem acesso de rede ao servidor Oracle (rede da Brasauto/VPN).")
+    print(f"FATAL ERROR connecting to Oracle ({oracle_host}:{oracle_port}/{oracle_service}): {e}")
+    print("Check whether this machine has network access to the Oracle server (Brasauto network/VPN).")
     sys.exit(1)
-
-
